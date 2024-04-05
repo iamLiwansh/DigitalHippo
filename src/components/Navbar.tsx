@@ -4,8 +4,12 @@ import Link from 'next/link'
 import NavItems from "./NavItems"
 import { buttonVariants } from "./ui/button"
 import Cart from "./Cart"
-const Navbar = () =>{
-    const user = null
+import { getServerSideUser } from "@/lib/payload-utils"
+import {cookies} from 'next/headers'
+
+const Navbar = async () =>{
+    const nextCookies = cookies()
+    const {user} = await getServerSideUser(nextCookies)//we are getting the user info is logged in or not(if yes than we work with that user)
     return (
         <div className="bg-white sticky z-50 top-0 inset-x h-16">
             <header className="relative bg-white">
