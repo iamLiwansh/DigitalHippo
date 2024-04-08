@@ -4,9 +4,12 @@ import { User } from "@/payload-types"
 import { Button } from "./ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu"
 import Link from "next/link"
+import { useAuth } from "@/hooks/use-auth"
 
 // dropdown list for user to logout or signin in as a seller
 const UserAccountNav =({user}: {user: User})=> {
+        const { signOut } = useAuth()
+
     return <DropdownMenu>
         <DropdownMenuTrigger asChild className="overflow-visible">
             <Button variant='ghost' size='sm' className="relative">My account</Button>
@@ -24,7 +27,7 @@ const UserAccountNav =({user}: {user: User})=> {
                 <Link href='/sell'>Seller Dashboard</Link>
             </DropdownMenuItem>
 
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuItem onClick ={signOut} className="cursor-pointer">
                 Log Out
             </DropdownMenuItem>
         </DropdownMenuContent>
