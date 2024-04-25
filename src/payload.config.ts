@@ -10,7 +10,6 @@ import { Media } from './collections/Media'
 import { ProductFiles } from './collections/ProductFile'
 import { Orders } from './collections/Orders'
 
-
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
 })

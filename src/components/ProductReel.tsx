@@ -19,7 +19,7 @@ const ProductReel = (props: ProductReelProps) => {
   const { title, subtitle, href, query } = props
 
   const { data: queryResults, isLoading } =
-    trpc.getInfiniteProducts.useInfiniteQuery(
+    trpc.getinfiniteProducts.useInfiniteQuery(
       {
         limit: query.limit ?? FALLBACK_LIMIT,
         query,

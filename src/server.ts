@@ -9,6 +9,8 @@ import { IncomingMessage } from "http"
 import { stripeWebhookHandler } from "./webhooks"
 import nextBuild from "next/dist/build"
 import path from "path"
+import { parse } from 'url'
+import { PayloadRequest } from "payload/types"
 
 
 const app = express()
@@ -40,6 +42,24 @@ const start = async () => {
             }
         }
     })
+
+    const cartRouter = express.Router()
+
+    cartRouter.use(payload.authenticate)
+
+    cartRouter.get('/', (req, res) => {
+        const request = req as PayloadRequest
+    
+        if (!request.user)
+          return res.redirect('/sign-in?origin=cart')
+    
+        const parsedUrl = parse(req.url, true)
+        const { query } = parsedUrl
+    
+        return nextApp.render(req, res, '/cart', parsedUrl.query)
+      })
+
+      app.use('/cart', cartRouter)
 
     if(process.env.NEXT_BUILD){
         app.listen(() => {
