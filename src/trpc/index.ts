@@ -7,7 +7,7 @@ import { paymentRouter } from "./payment-router";
 
 export const appRouter = router({
     auth : authRouter,
-    payment: paymentRouter
+    payment: paymentRouter,
 
     getinfiniteProducts: publicProcedure.input(z.object({
         limit: z.number().min(1).max(100),
