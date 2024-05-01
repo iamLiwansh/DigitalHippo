@@ -62,7 +62,7 @@ const start = async () => {
       app.use('/cart', cartRouter)
 
     if(process.env.NEXT_BUILD){
-        app.listen(() => {
+        app.listen( async () => {
             payload.logger.info("Next.js is building for production")
             //@ts-expect-error
             await nextBuild(path.join(__dirname,"../"))

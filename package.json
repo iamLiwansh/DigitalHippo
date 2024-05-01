@@ -2,6 +2,7 @@
   "name": "digitalhippo",
   "version": "0.1.0",
   "private": true,
+  
   "main": "dist/server.js",
   "scripts": {
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
@@ -36,6 +37,7 @@
     "@trpc/react-query": "^10.43.1",
     "@trpc/server": "^10.43.1",
     "body-parser": "^1.20.2",
+    "button": "^1.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cross-env": "^7.0.3",
@@ -51,7 +53,7 @@
     "react-hook-form": "^7.48.2",
     "resend": "^2.0.0",
     "sonner": "^1.2.0",
-    "stripe": "^15.3.0",
+    "stripe": "^15.4.0",
     "swiper": "^11.1.1",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
