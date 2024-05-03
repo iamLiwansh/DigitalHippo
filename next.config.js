@@ -3,7 +3,7 @@ const nextConfig = {
 	images: {
 		domains: [
 			'localhost',
-			'https://digitalhippo-production-ccfd.up.railway.app/',
+			'digitalhippo-production-ccfd.up.railway.app',
 		],
 	},
 };
