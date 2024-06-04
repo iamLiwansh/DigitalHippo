@@ -3,7 +3,7 @@ const nextConfig = {
 	images: {
 		domains: [
 			'localhost',
-			'digitalhippo-production-ccfd.up.railway.app',
+			'https://digital-hippo-azure.vercel.app',
 		],
 	},
 };
