@@ -3,7 +3,7 @@ const nextConfig = {
 	images: {
 		domains: [
 			'localhost',
-			'https://digital-hippo-azure.vercel.app',
+			'https://digital-hippo-nine-sepia.vercel.app/',
 		],
 	},
 };
