@@ -1,9 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		domains: [
-			'localhost',
-			'https://digital-hippo-nine-sepia.vercel.app/',
+		remotePatterns: [
+			{
+				protocol: "http",
+				hostname: "localhost",
+			},
+			{
+				protocol: "https",
+				hostname: "digital-hippo-nine-sepia.vercel.app",
+			},
 		],
 	},
 };
